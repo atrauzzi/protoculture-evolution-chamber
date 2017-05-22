@@ -19,6 +19,7 @@
         "no-reference": true,
         "one-line": false,
         "max-line-length": false,
+        "array-type": [true, "array"],
         "trailing-comma": [true, {
             "objects": "always",
             "arrays": "always",
