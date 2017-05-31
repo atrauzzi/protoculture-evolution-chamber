@@ -4,7 +4,7 @@ import * as glob from "glob";
 import * as webpack from "webpack";
 
 
-const webSuites = glob.sync(`${__dirname}/src/Suite/Web*.ts`);
+const webBundles = glob.sync(`${__dirname}/src/Bundle/Web*.ts`);
 
 const template = {
 
@@ -52,15 +52,15 @@ const template = {
     ],
 };
 
-export default _.map(webSuites, (webSuite) => {
+export default _.map(webBundles, (webBundle) => {
 
     const outputPath = `${__dirname}/bundle`;
-    const baseName = path.basename(webSuite, ".ts");
+    const baseName = path.basename(webBundle, ".ts");
     const outputFilename = `${_.kebabCase(baseName).toLowerCase()}.js`;
 
     return {
         ...template,
-        entry: webSuite,
+        entry: webBundle,
         output: {
             filename: outputFilename,
             path: outputPath,

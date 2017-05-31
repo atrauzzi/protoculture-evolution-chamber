@@ -1,9 +1,9 @@
 import { ReactServiceProvider } from "protoculture-react";
-import { Suite, WebServiceProvider } from "protoculture";
+import { Bundle, WebServiceProvider } from "protoculture";
 import { HomeServiceProvider } from "../App/Home/ServiceProvider";
 
 
-class WebHome extends Suite {
+class WebHome extends Bundle {
 
     public name = "home";
 
@@ -17,5 +17,5 @@ class WebHome extends Suite {
     }
 }
 
-const suite = new WebHome();
-suite.run();
+const bundle = new WebHome();
+bundle.run();

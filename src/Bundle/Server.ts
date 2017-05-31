@@ -1,11 +1,11 @@
 #!/usr/bin/env ts-node
-import { Suite, ConsoleServiceProvider } from "protoculture";
+import { Bundle, ConsoleServiceProvider } from "protoculture";
 import { HapiServiceProvider, InertServiceProvider } from "protoculture-hapi";
 import { StaticServerServiceProvider } from "../App/StaticServer/ServiceProvider";
 import { EnvironmentServiceProvider } from "../App/EnvironmentServer/ServiceProvider";
 
 
-class Server extends Suite {
+class Server extends Bundle {
 
     public name = "server";
 
@@ -21,5 +21,5 @@ class Server extends Suite {
     }
 }
 
-const suite = new Server();
-suite.run().catch(console.error);
+const bundle = new Server();
+bundle.run().catch(console.error);

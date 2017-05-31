@@ -19,14 +19,9 @@ export class EnvironmentServiceProvider extends ServiceProvider {
             };
         });
 
-        // ToDo: Make this nicer?  Is there maybe a way we can hide the controller symbols?
-        // ToDo: 'cause then all you need is the controller type and optional constructor params in the config!
-        this.makeInjectable(EnvironmentController);
-        this.bindConstructor(environmentServerSymbols.Controller, EnvironmentController);
-
         this.configureRoute({
             path: "/{bundle}.env.json",
-            actionSymbol: environmentServerSymbols.Controller,
+            actionObject: EnvironmentController,
             actionMethod: "lookup",
         });
 
