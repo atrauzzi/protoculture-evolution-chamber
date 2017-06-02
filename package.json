@@ -3,6 +3,7 @@
   "version": "0.0.0-development",
   "private": true,
   "scripts": {
+    "webpack-dev-server": "webpack-dev-server --config webpack.config.ts --hot",
     "serve": "ts-node src/Bundle/Server.ts",
     "bundle": "webpack --config webpack.config.ts"
   },
@@ -19,6 +20,7 @@
     "glob": "^7.1.2",
     "protoculture-react": "^1.0.0",
     "source-map-loader": "^0.2.1",
-    "webpack": "^2.5.0"
+    "webpack": "^2.5.0",
+    "webpack-dev-server": "^2.4.5"
   }
 }

@@ -8,7 +8,7 @@ export class Home extends React.Component<void, void> {
 
         return <div>
 
-            <h1>Protoculture</h1>
+            <h1>Protoculture, go</h1>
 
             <p>This site is powered entirely by <a href="http://github.com/atrauzzi/protoculture">protoculture</a>!</p>
 

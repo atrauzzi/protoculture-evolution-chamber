@@ -7,7 +7,7 @@ export class HomeServiceProvider extends ServiceProvider {
 
     public async boot() {
 
-        this.bindReactApp({
+        this.configureReactApp({
             component: Home,
             id: "home",
         });

@@ -22,6 +22,11 @@ const template = {
     module: {
         rules: [
             {
+                enforce: "pre",
+                test: /\.tsx?$/,
+                use: "source-map-loader",
+            },
+            {
                 test: /\.tsx?$/,
                 loader: "awesome-typescript-loader",
             },
@@ -48,14 +53,17 @@ const template = {
                 screw_ie8: true,
             },
             comments: false,
+            sourceMap: true,
         })
     ],
 };
 
 export default _.map(webBundles, (webBundle) => {
 
-    const outputPath = `${__dirname}/bundle`;
+    const basePath = `lib/Bundle`;
     const baseName = path.basename(webBundle, ".ts");
+
+    const outputPath = path.resolve(__dirname, basePath);
     const outputFilename = `${_.kebabCase(baseName).toLowerCase()}.js`;
 
     return {
@@ -64,6 +72,7 @@ export default _.map(webBundles, (webBundle) => {
         output: {
             filename: outputFilename,
             path: outputPath,
+            publicPath: "/",
         }
     };
 });
